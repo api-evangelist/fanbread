@@ -1,7 +1,27 @@
 aid: fanbread
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fanbread.png
 name: Fanbread
-description: Fanbread is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Fanbread is a defunct venture-backed company originally surfaced as a portfolio
+  company of 500 Global and added to the API Evangelist network as an enrichment lead.
+  Its primary domain fanbread.com no longer resolves to a live site — the HTTPS handshake
+  fails and HTTP returns 410 Gone from a parking host — and no website, developer portal,
+  documentation, API reference, or machine-readable API surface remains anywhere. The
+  company's GitHub organization survives under the login FanBread but is now titled
+  "Wild Sky Media FnB" and points at wildskymedia.com; its seven public repositories are
+  forks and small front-end utilities with no first-party API artifacts and no activity
+  since April 2020. This profile is retained as a historical record and a dead-domain
+  marker, not as an active API provider.
 url: https://raw.githubusercontent.com/api-evangelist/fanbread/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,11 +29,30 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-enrichment-status: dead-domain
+x-enrichment-checked: '2026-07-20'
+x-enrichment-note: 'Re-verified 2026-07-20 by independent probe. fanbread.com is parked/defunct:
+  HTTPS handshake fails (SSL_ERROR_SYSCALL), HTTP and www both return 410 Gone, A record
+  resolves to parking IP 185.53.179.113, nameservers ns1/ns2.ibspark.com, SPF "v=spf1 -all"
+  (no mail), no MX, no DMARC, no DNSSEC. All well-known probes (/.well-known/security.txt,
+  /llms.txt, /openapi.json) return 410. No packages published under the name on npm, PyPI,
+  RubyGems, crates.io or Packagist. The GitHub organization FanBread does exist (HTTP 200)
+  but is now titled "Wild Sky Media FnB", links to wildskymedia.com, and holds only forks
+  and front-end utilities last pushed 2020-04-09 — no first-party API artifacts.
+  wildskymedia.com is live (HTTP 200) but publishes no developer surface: security.txt,
+  openid-configuration, oauth-authorization-server, api-catalog, ai-plugin.json and
+  llms.txt all return 404. Nothing to enrich; skip on future runs unless the domain is
+  reactivated. Note: WebSearch quota was exhausted during this pass, so the conclusion
+  rests on direct DNS/HTTP/registry probes rather than search.'
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Defunct
+- Venture Backed
+- 500 Global
+- Media
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +60,14 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/fanbread-domain-security.yml
 - type: Website
   url: https://fanbread.com
+- type: GitHubOrganization
+  url: https://github.com/FanBread
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
