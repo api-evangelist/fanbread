@@ -44,7 +44,7 @@ x-enrichment-note: 'Re-verified 2026-07-20 by independent probe. fanbread.com is
   llms.txt all return 404. Nothing to enrich; skip on future runs unless the domain is
   reactivated. Note: WebSearch quota was exhausted during this pass, so the conclusion
   rests on direct DNS/HTTP/registry probes rather than search.'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-20'
 tags:
